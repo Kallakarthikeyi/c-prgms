@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+	char str[100];
+		int i=0,cnt=0,spl=0;
+	printf("enter string:\n");
+	gets(str);
+	while(str[i]!='\0'){
+	if(str[i]==' ')
+		cnt;
+		else if(str[i]>='0'&&str[i]<='9')cnt;
+		else if(str[i]>='a'&&str[i]<='z')cnt++;
+		else if(str[i]>='A'&&str[i]<='Z')cnt;
+		else spl++;
+		i++;
+	}
+	printf(" count of lower case letters=%d",cnt);
+	printf("\ncount of special characters:%d",spl);
+	return 0;
+}
