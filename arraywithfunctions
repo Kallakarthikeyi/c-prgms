@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+int deletion(int pos, int arr[], int *len) {
+    if (pos >= 0 && pos < *len) {
+        int i;
+        for (i = pos; i < *len - 1; i++)
+            arr[i] = arr[i + 1];
+        (*len)--;
+        for (i = 0; i < *len; i++)
+            printf("%d ", arr[i]);
+    } else {
+        printf("\nInput out of bounds..!!");
+    }
+    return 0;
+}
+
+int insertion(int pos, int ele, int arr[], int *len) {
+    if (pos >= 0 && pos <= *len) {
+        int i;
+        for (i = *len - 1; i >= pos; i--) {
+            arr[i + 1] = arr[i];
+        }
+        (*len)++;
+        arr[pos] = ele;
+        for (i = 0; i < *len; i++)
+            printf("%d ", arr[i]);
+    } else {
+        printf("Invalid position.");
+    }
+    return 0;
+}
+
+int main() {
+    int len;
+    scanf("%d", &len);
+    int arr[len];
+    int i;
+    for (i = 0; i < len; i++)
+        scanf("%d", &arr[i]);
+
+    int pos, ele;
+    scanf("%d %d", &pos, &ele);
+
+    deletion(pos, arr, &len);
+    printf("\n");
+    insertion(pos, ele, arr, &len);
+    return 0;
+}
